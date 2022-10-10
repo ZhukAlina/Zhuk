@@ -1,0 +1,47 @@
+#include <iostream>
+#include <typeinfo>
+#include <string>
+#include <cmath>
+
+using namespace std;
+
+
+
+long double fact(int N)
+{
+    
+    if (N == 0) 
+        return 1; 
+    else 
+        return N * fact(N - 1);
+}
+int main()
+{
+	int a=0;
+    double N;
+   /* setlocale(0,""); // Включаем кириллицу*/
+    
+    
+	while(true) {
+		cout << "Vvedite chislo ";
+		cin>>N;
+	if(typeid(N).name()==typeid(string).name())
+	{cout<<"Vvedite ne stroku a chislo"<<endl;}
+	else{
+	if(N<0){
+	cout<<"Vvedite neotricatelnoe chislo"<<endl;}
+	else{
+	if(int(N)- N !=0){
+	cout<<"Vvedite celoe chislo"<<endl;}
+	else{
+	if(int(N)>100000)
+	{cout<<"Vvedite chislo menshe"<<endl;}
+	else{cout << "Factorial " << N << " = " << fact(int(N)) << endl; 
+	a=1;
+	break;}
+	}}}
+    }
+	
+	return 0;
+
+}
