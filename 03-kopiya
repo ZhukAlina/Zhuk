@@ -1,0 +1,14 @@
+#include <iostream>
+#include <string>
+
+int main()
+{
+    std::string slovo, CopSlova;
+    std::cout << "Vvedite stroku: ";
+    std::cin >> slovo;
+    for (int i = 0; i < slovo.length(); i++)
+    {
+        CopSlova = CopSlova + slovo[i];
+    };
+    std::cout << "Kopiya: "<<CopSlova<<std::endl;
+}
