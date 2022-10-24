@@ -1,47 +1,35 @@
-#include <iostream>
-#include <typeinfo>
-#include <string>
-#include <cmath>
-
+#include<iostream>
 using namespace std;
 
-
-
-long double fact(int N)
-{
-    
-    if (N == 0) 
-        return 1; 
-    else 
-        return N * fact(N - 1);
+int factorial(int n){
+    if (n == 0 | n == 1){
+        return 1;
+    }
+    else
+        return n * factorial(n - 1);
 }
+
 int main()
 {
-	int a=0;
     double N;
-   /* setlocale(0,""); // Включаем кириллицу*/
-    
-    
-	while(true) {
-		cout << "Vvedite chislo ";
-		cin>>N;
-	if(typeid(N).name()==typeid(string).name())
-	{cout<<"Vvedite ne stroku a chislo"<<endl;}
-	else{
-	if(N<0){
-	cout<<"Vvedite neotricatelnoe chislo"<<endl;}
-	else{
-	if(int(N)- N !=0){
-	cout<<"Vvedite celoe chislo"<<endl;}
-	else{
-	if(int(N)>100000)
-	{cout<<"Vvedite chislo menshe"<<endl;}
-	else{cout << "Factorial " << N << " = " << fact(int(N)) << endl; 
-	a=1;
-	break;}
-	}}}
-    }
-	
-	return 0;
 
+
+
+    bool flag = true;
+    bool check;
+    while (flag) {
+        check = (cin >> N).good() & (N > 0) & (N < 100000) & (int(N) - N == 0);
+        if(!check){
+            cerr << "!\n";
+            cin.clear();
+            cin.ignore(256, '\n');
+        }
+
+        if(check){
+            cout << factorial(N);
+            flag = false;
+        }
+
+
+    }
 }
