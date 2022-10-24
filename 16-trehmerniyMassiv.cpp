@@ -47,5 +47,6 @@ int main(){
 			delete[] array[i][j];
 		}
 	}
+	delete[] array;
 	return 0;
 }
